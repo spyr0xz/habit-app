@@ -6,6 +6,7 @@ import { BuildEnv, BuildPaths } from "./config/build/types/config";
 
 
 
+
 export default (env: BuildEnv) => {
 
   const paths: BuildPaths = {
