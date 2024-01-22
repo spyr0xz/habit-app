@@ -1,6 +1,6 @@
-import MainPage from "pages/Habits/MainPage"
-import NotFoundPage from "pages/NotFoundPage/NotFoundPage"
-import TodosPage from "pages/Todos/TodosPage"
+import MainPage from "pages/Habits/ui/MainPage"
+import NotFoundPage from "pages/NotFoundPage/ui/NotFoundPage"
+import TodosPage from "pages/Todos/ui/TodosPage"
 import { RouteProps } from "react-router-dom"
 
 export enum AppRoutes {
