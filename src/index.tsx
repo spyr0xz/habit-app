@@ -1,11 +1,14 @@
 import { BrowserRouter } from "react-router-dom";
 import { App } from "./app/App";
-import "./app/styles/index.scss";
-import { render } from "react-dom";
+import "shared/config/i18n/i18n";
+import "app/styles/index.scss"
+import { createRoot } from 'react-dom/client';
 
-render(
+const container = document.getElementById('root')
+const root = createRoot(container);
+
+root.render(
   <BrowserRouter>
     <App />
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+  </BrowserRouter>
+)
