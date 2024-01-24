@@ -2,7 +2,7 @@
   // height: calc(100vh - var(--navbar-height));
   height: 100vh;
   background: white;
-  width: var(--sidebar-width)
+  width: var(--sidebar-width);
 }
 
 .logo {
@@ -16,6 +16,7 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
+  gap: 10px;
 }
 
 .item {
@@ -25,10 +26,15 @@
 
   font-weight: 700;
 
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .item:hover {
-  background-color:var(--light-blue);
+  background-color: var(--light-blue);
+  color: var(--secondary-blue);
+}
+
+.active {
+  background-color: var(--light-blue);
   color: var(--secondary-blue);
 }
