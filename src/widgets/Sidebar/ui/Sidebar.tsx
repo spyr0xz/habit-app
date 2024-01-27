@@ -5,6 +5,8 @@ import { AppLink, AppLinkVariant } from "shared/ui/AppLink/AppLink";
 import { AppRoutes, routePath } from "shared/config/routeConfig/routeConfig";
 import { useCallback, useState } from "react";
 import { useLocation } from "react-router-dom";
+import CalendarIcon from 'shared/assets/icons/CalendarIcon.svg'
+
 
 interface SidebarProps {
   className?: string;
@@ -31,6 +33,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
           to={routePath.main}
           onClick={onClickHandler}
         >
+          <CalendarIcon />
           <span>{t("Habits")}</span>
         </AppLink>
         <AppLink
