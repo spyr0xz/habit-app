@@ -20,6 +20,10 @@
 }
 
 .item {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+
   color: var(--light-gray);
   padding: 10px;
   border-radius: var(--link-radius);
@@ -29,12 +33,26 @@
   transition: all 0.3s ease-in-out;
 }
 
+.icon path {
+  transition: stroke 0.3s ease-in;
+}
+
 .item:hover {
   background-color: var(--light-blue);
   color: var(--secondary-blue);
+
+  .icon path {
+    stroke: var(--secondary-blue);
+  }
+
+  
 }
+
 
 .active {
   background-color: var(--light-blue);
   color: var(--secondary-blue);
+    .icon path {
+      stroke: var(--secondary-blue);
+    }
 }

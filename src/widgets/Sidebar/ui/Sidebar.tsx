@@ -6,6 +6,8 @@ import { AppRoutes, routePath } from "shared/config/routeConfig/routeConfig";
 import { useCallback, useState } from "react";
 import { useLocation } from "react-router-dom";
 import CalendarIcon from 'shared/assets/icons/CalendarIcon.svg'
+import ListIcon from 'shared/assets/icons/ListIcon.svg'
+import AnalyticIcon from 'shared/assets/icons/AnalyticIcon.svg'
 
 
 interface SidebarProps {
@@ -33,7 +35,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
           to={routePath.main}
           onClick={onClickHandler}
         >
-          <CalendarIcon />
+          <CalendarIcon className={cls.icon} />
           <span>{t("Habits")}</span>
         </AppLink>
         <AppLink
@@ -42,6 +44,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
           className={cls.item}
           to={routePath.todos}
         >
+          <ListIcon className={cls.icon} />
           <span>{t("Todo List")}</span>
         </AppLink>
         <AppLink
@@ -50,6 +53,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
           className={cls.item}
           to={routePath.analytics}
         >
+          <AnalyticIcon className={cls.icon}/>
           <span>{t("Analytics")}</span>
         </AppLink>
         <AppLink

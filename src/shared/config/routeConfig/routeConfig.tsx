@@ -3,9 +3,10 @@ import { MainPage } from "pages/Habits";
 import { NotFoundPage } from "pages/NotFoundPage";
 import { SettingsPage } from "pages/SettingsPage";
 import TodosPage from "pages/Todos/ui/TodosPage";
-import { RouteProps } from "react-router-dom";
+import { Navigate, RouteProps } from "react-router-dom";
 
 export enum AppRoutes {
+  DEFAULT = "default",
   MAIN = "main",
   TODOS = "todos",
   ANALYTICS = "analytics",
@@ -14,14 +15,19 @@ export enum AppRoutes {
 }
 
 export const routePath: Record<AppRoutes, string> = {
+  [AppRoutes.DEFAULT]: '/',
   [AppRoutes.MAIN]: "/main",
   [AppRoutes.TODOS]: "/todos",
   [AppRoutes.ANALYTICS]: "/analytics",
-  [AppRoutes.SETTINGS]: "settings",
-  [AppRoutes.NOT_FOUND]: "/",
+  [AppRoutes.SETTINGS]: "/settings",
+  [AppRoutes.NOT_FOUND]: "*",
 };
 
 export const routeConfig: Record<AppRoutes, RouteProps> = {
+  [AppRoutes.DEFAULT]: {
+    path: routePath.default,
+    element: <Navigate to={routePath.main} />
+  },
   [AppRoutes.MAIN]: {
     path: routePath.main,
     element: <MainPage />,
