@@ -1,6 +1,7 @@
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import webpack from "webpack";
 import { BuildOptions } from "./types/config";
+import { url } from "inspector";
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   const typescriptLoader = {
@@ -21,6 +22,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
       {
         loader: "file-loader",
       },
+      
     ],
   };
 
