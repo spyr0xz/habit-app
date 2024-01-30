@@ -1,0 +1,31 @@
+.InputWrapper {
+  position: relative;
+}
+
+.input {
+  padding: 20px;
+  outline: none;
+  border: none;
+  width: 100%;
+  border-radius: 28px;
+
+}
+
+.placeholder {
+  position: absolute;
+  color: var(--light-gray);
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+
+  left: 20px;
+  top: 20px;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.active .placeholder{
+  font-size: 14px;
+  top: -25px;
+}
