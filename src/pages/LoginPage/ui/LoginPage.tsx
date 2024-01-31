@@ -2,6 +2,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./LoginPage.module.scss";
 import { Input } from "shared/ui/Input/Input";
 import { useTranslation } from "react-i18next";
+import { useCallback, useState } from "react";
 
 interface LoginPageProps {
   className?: string;
@@ -9,6 +10,7 @@ interface LoginPageProps {
 
 const LoginPage = ({ className }: LoginPageProps) => {
   const { t } = useTranslation();
+  const [value, setValue] = useState("");
 
   return (
     <div className={classNames(cls.LoginPage, {}, [className])}>
@@ -17,15 +19,13 @@ const LoginPage = ({ className }: LoginPageProps) => {
         <div className={cls.content}>
           <div className={cls.inputWrapper}>
             <Input placeholder="Username" />
-            <Input placeholder="Password" />
+            <Input type="password" placeholder="Password" />
           </div>
           <div className={cls.descr}>
             <p>
-              {t('Don’t have an account?')} <span>Sign Up</span>
+              {t("Don’t have an account?")} <span>Sign Up</span>
             </p>
-            <p>
-              {t('Forgot password?')}
-            </p>
+            <p>{t("Forgot password?")}</p>
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@
   width: 100%;
   border-radius: 28px;
 
+  transition: .3s ease-in-out;
 }
 
 .placeholder {
@@ -25,7 +26,18 @@
   font-weight: 400;
 }
 
-.active .placeholder{
-  font-size: 14px;
-  top: -25px;
+.active {
+  .input {
+    background-color: var(--primary-blue);
+    color: white;
+  }
+
+  .placeholder{
+    font-size: 14px;
+    top: -25px;
+    
+  }
+
 }
+
+

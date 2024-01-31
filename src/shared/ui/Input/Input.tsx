@@ -1,4 +1,13 @@
-import { FC, InputHTMLAttributes, memo, useCallback, useState } from "react";
+import {
+  FC,
+  FocusEvent,
+  InputHTMLAttributes,
+  memo,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Input.module.scss";
 
@@ -23,19 +32,22 @@ export const Input = memo((props: InputProps) => {
     type = "text",
     ...otherProps
   } = props;
+  const ref = useRef<HTMLInputElement>();
+
+  const [isFocused, setIsFocused] = useState(false);
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value);
   };
 
-  const [isFocused, setIsFocused] = useState(false);
-
-  const onFocusHandler = () => {
+  const onFocus = (e: FocusEvent<HTMLInputElement>) => {
     setIsFocused(true);
   };
 
-  const onBlurHandler = () => {
-    setIsFocused(false);
+  const onBlur = (e: FocusEvent<HTMLInputElement>) => {
+    if (!e.target.value) {
+      setIsFocused(false);
+    }
   };
 
   return (
@@ -44,14 +56,10 @@ export const Input = memo((props: InputProps) => {
         className,
       ])}
     >
-      {placeholder && (
-        <span className={cls.placeholder}>
-          {placeholder}
-        </span>
-      )}
+      {placeholder && <span className={cls.placeholder}>{placeholder}</span>}
       <input
-        onFocus={onFocusHandler}
-        onBlur={onBlurHandler}
+        onFocus={onFocus}
+        onBlur={onBlur}
         className={cls.input}
         value={value}
         type={type}
