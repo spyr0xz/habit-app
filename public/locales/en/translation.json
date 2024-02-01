@@ -3,5 +3,16 @@
   "Habits": "Habits",
   "Todo List": "Todo List",
   "Analytics": "Analytics",
-  "Settings": "Settings"
+  "Settings": "Settings",
+  "Login": "Login",
+  "Sign Up": "Sign Up",
+  "Don’t have an account?": "Don’t have an account?",
+  "Already have an account?": "Already have an account?",
+  "Create an account": "Create an account",
+  "Forgot password?": "Forgot password?",
+  "Username": "Username",
+  "Password": "Password",
+  "Email": "Email",
+  "New password": "New password",
+  "Re-enter password": "Re-enter password"
 }
