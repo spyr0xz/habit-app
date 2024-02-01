@@ -37,10 +37,10 @@ const LoginPage = ({ className }: LoginPageProps) => {
           <div className={cls.descr}>
             <p>
               {isSignedUp
-                ? `${t("Already have an account?")} `
-                : `${t("Don’t have an account?")} `}
+                ? `${t("Don’t have an account?")} `
+                : `${t("Already have an account?")} `}
               <span onClick={isSignedHandler} className={cls.signBtn}>
-                {isSignedUp ? t("Login") : t("Create an account")}
+                {isSignedUp ? t("Create an account") : t("Login")}
               </span>
             </p>
             <p>{t("Forgot password?")}</p>
