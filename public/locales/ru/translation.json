@@ -3,5 +3,16 @@
   "Habits": "Привычки",
   "Todo List": "Список дел",
   "Analytics": "Аналитика",
-  "Settings": "Настройки"
+  "Settings": "Настройки",
+  "Login": "Войти",
+  "Sign Up": "Зарегистрироваться",
+  "Don’t have an account?": "Не зарегистрированы?",
+  "Create an account": "Создать аккаунт",
+  "Already have an account?": "Уже есть аккаунт?",
+  "Forgot password?": "Забыли пароль?",
+  "Username": "Имя пользователя",
+  "Password": "Пароль",
+  "Email": "Электронная почта",
+  "New password": "Новый пароль",
+  "Re-enter password": "Повторите пароль"
 }

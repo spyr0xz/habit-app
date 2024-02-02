@@ -2,7 +2,9 @@ import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./LoginPage.module.scss";
 import { Input } from "shared/ui/Input/Input";
 import { useTranslation } from "react-i18next";
-import { useCallback, useState } from "react";
+import Button, { ButtonTheme } from "shared/ui/Button/Button";
+import { useState } from "react";
+import { User } from "app/entities/User";
 
 interface LoginPageProps {
   className?: string;
@@ -10,23 +12,43 @@ interface LoginPageProps {
 
 const LoginPage = ({ className }: LoginPageProps) => {
   const { t } = useTranslation();
-  const [value, setValue] = useState("");
+  const [isSignedUp, setIsSignedUp] = useState<Boolean>(true);
+  const isSignedHandler = () => {
+    setIsSignedUp((prev) => !prev);
+  };
 
   return (
     <div className={classNames(cls.LoginPage, {}, [className])}>
       <h1 className={cls.title}>Habit App</h1>
       <div className={cls.dialog}>
         <div className={cls.content}>
-          <div className={cls.inputWrapper}>
-            <Input placeholder="Username" />
-            <Input type="password" placeholder="Password" />
-          </div>
+          {isSignedUp ? (
+            <div className={cls.inputWrapper}>
+              <Input placeholder={t("Username")} />
+              <Input type="password" placeholder={t("Password")} />
+            </div>
+          ) : (
+            <div className={cls.inputWrapper}>
+              <Input placeholder={t("Email")} />
+              <Input type="password" placeholder={t("New password")} />
+              <Input type="password" placeholder={t("Re-enter password")} />
+            </div>
+          )}
+
           <div className={cls.descr}>
             <p>
-              {t("Don’t have an account?")} <span>Sign Up</span>
+              {isSignedUp
+                ? `${t("Don’t have an account?")} `
+                : `${t("Already have an account?")} `}
+              <span onClick={isSignedHandler} className={cls.signBtn}>
+                {isSignedUp ? t("Create an account") : t("Login")}
+              </span>
             </p>
             <p>{t("Forgot password?")}</p>
           </div>
+          <Button className={cls.button} theme={ButtonTheme.PRIMARY}>
+            {isSignedUp ? t("Login") : t("Sign Up")}
+          </Button>
         </div>
       </div>
     </div>
